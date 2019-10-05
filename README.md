@@ -41,8 +41,7 @@ Case1:
 
 | Policy Iteration | Value Iteration |
 | -------- | -------- |
-| ![](https://i.imgur.com/dczLZDl.png)| ![](https://i.imgur.com/hHcz2zk.png)
-|
+| ![](https://i.imgur.com/dczLZDl.png)| ![](https://i.imgur.com/hHcz2zk.png)|
 
 
 Case2:
