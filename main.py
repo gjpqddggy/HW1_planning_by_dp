@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+envDir = 'environment/'
+saveDir = 'results/'
 filename = 'gridmap_4'
 
 def valueEvaluation(m, p):
@@ -40,7 +42,7 @@ def policyImprovement(m, p):
 
 
 def policyIteration(m, p):
-    # print('V1\n' + str(m))
+    print('V1\n' + str(m))
     # print('P1\n' + str(p))
     idx = 2
     while 1:
@@ -48,7 +50,7 @@ def policyIteration(m, p):
         newp = policyImprovement(nm, p)
         if np.array_equal(nm, m):
             break
-        # print('V' + str(idx) + '\n' + str(nm))
+        print('V' + str(idx) + '\n' + str(nm))
         # print('P' + str(idx) + '\n' + str(newp))
         m = nm
         p = newp
@@ -58,7 +60,7 @@ def policyIteration(m, p):
 
 
 def valueIteration(m, p):
-    # print('V1\n' + str(m))
+    print('V1\n' + str(m))
     index = 2
     while 1:
         nm = np.copy(m)
@@ -69,7 +71,7 @@ def valueIteration(m, p):
 
         if np.array_equal(nm, m):
             break
-        # print('V' + str(index) + '\n' + str(nm))
+        print('V' + str(index) + '\n' + str(nm))
         m = nm
         index += 1
     newp = policyImprovement(nm,p)
@@ -95,7 +97,7 @@ def plot(policy, m, mode):
                 if policy[i][j][0] > 0: plt.arrow(j+0.5, (m.shape[0])-i-0.5, 0, 0.3, width=0.02)
 
         #plt.show()
-        plt.savefig(str(filename)+'_'+mode+".png")
+        plt.savefig(saveDir + filename + '_' + mode + ".png")
         plt.close()
 
 def generatePolicy(map):
@@ -112,7 +114,7 @@ def generatePolicy(map):
 
 
 if __name__ == '__main__':
-    map = np.loadtxt(filename+'.txt')
+    map = np.loadtxt(envDir + filename + '.txt')
     policy = generatePolicy(map)
     print('policy iteration')
     policyIteration(map, policy)
