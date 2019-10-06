@@ -8,7 +8,7 @@ This homework is relatively simple, yet there are some points that really confun
     2. policy improvement(greedy method)
     3. finish iteration if ( |V(s)'-V(s)| < epsilon ), else: repeat 1. and 2.
 * Value Iteration
-    1. update every state by choosing maximum $R + V(s)$
+    1. update every state by choosing maximum R + V(s)
     2. finish iteration if ( |V(s)'-V(s)| < epsilon ), else: repeat 1.
     3. update policy ***once***
 
